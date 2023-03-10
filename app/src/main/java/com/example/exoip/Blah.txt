@@ -1,0 +1,32 @@
+--> Ask the end user for Mic permission
+--> Hit the Client API which will internally hit the Chaotix API to get the token for a new user or renew token if it has expired.
+    api.exotel.com/v2/accounts/$accountSID/subscriber-token
+
+    Response - {
+                 "request_id": "d8e244592ffc42889d12632d19644e7d",
+                 "method": "POST",
+                 "http_code": 200,
+                 "account_sid": "exotel675",
+                 "host_name": "https://miles.apac-sg.exotel.in/v2",
+                 "exophone": "08037093944",
+                 "contact_display_name": "Test",
+                 "subscriber_name": "1234567890",
+                 "subscriber_token": {
+                   "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFeG90ZWwiLCJzdWIiOiIxMjM0NTY3ODkwIiwiaWF0IjoiMTY3ODQ0MjA5MiIsImV4cCI6IjE2Nzg1Mjg0OTIiLCJjbGllbnRfaWQiOiJleG90ZWw2NzUiLCJkZXZpY2VfaWQiOiI2ZDI4NGIwODVlMWZlZGJkIn0.IQRxV85gEWfcWJ9KqiY3_gXcyLn7vEww_7fzKDEZHG0",
+                   "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFeG90ZWwiLCJzdWIiOiIxMjM0NTY3ODkwIiwiaWF0IjoiMTY3ODQ0MjA5MiIsImV4cCI6IjE2Nzg0NDM4OTIiLCJjbGllbnRfaWQiOiJleG90ZWw2NzUiLCJkZXZpY2VfaWQiOiI2ZDI4NGIwODVlMWZlZGJkIiwic2NvcGUiOiJ2b2ljZSJ9.6mwwLyCVVbqW7TiKmQSM6VnS1oHz7D7-jAd_QWAUrbs"
+                 }
+               }
+
+--> Get the token from Client API and pass it to initialize.
+--> initialize( context,		// Android application context
+                hostname,           // Host URL for the Client Backend
+                subscriberName,     // W
+                displayName,        // Display name of the subscriber
+                accountSid,         // Exotel Account SID
+                subscriberToken,	// Subscriber token fetched from exotel platform
+               );
+
+-->
+
+
+
